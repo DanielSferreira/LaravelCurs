@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+ Route::prefix('home')->group(function(){
+     Route::get('','Listagem@index');
+     Route::get('sobre/{mensagem}','Listagem@getSobre');
+ });
