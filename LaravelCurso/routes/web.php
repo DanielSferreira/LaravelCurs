@@ -1,5 +1,6 @@
 <?php
 
+use App\Faltas;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
- Route::prefix('home')->group(function(){
+ Route::prefix('api')->group(function(){
+     
      Route::get('','Listagem@index');
+     Route::get('/faltas','Listagem@faltas');
+     Route::get('/apostilas','Listagem@apostilas');
+    
      Route::get('sobre/{mensagem}','Listagem@getSobre');
  });
